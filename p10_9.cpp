@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string.h>
+#include<string>
 #include<map>
 #include<utility>
 
@@ -15,7 +15,7 @@ int main()
     while(cin >> word)
     {
         ret = word_count.insert(make_pair(word,1));
-        if(!ret.second)
+        if(!ret.second)//Word already exist in the map.The bool value is zero.
             ++(ret.first)->second;
         for(map<string, int>::iterator iter=word_count.begin(); iter != word_count.end(); ++iter)
         {
